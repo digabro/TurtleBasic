@@ -213,7 +213,7 @@ while true do
         infoGetCom1()
     elseif (invStatus == 'com2') then 
         infoGetCom2()
-   elseif (invStatus == 'term') then 
+    elseif (invStatus == 'term') then 
        infoTerminal()
     end
 end
