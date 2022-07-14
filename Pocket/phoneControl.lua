@@ -205,6 +205,7 @@ while true do
         invStatus = 'com1'
     elseif key == keys.p then 
         invStatus = 'com2'
+    end
     sleep(0.4)
     if (invStatus == 'inv') then 
         infoGetInv()
