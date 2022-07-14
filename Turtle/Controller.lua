@@ -2,7 +2,6 @@ rednet.open("left")
 
 local SLOT_COUNT = 16
 local PHONE_NUM = 2
-local HERA = 11
 local info = {}
 
 
@@ -36,7 +35,6 @@ while true do
         refuel()
         shell.run("Summon", message[1], message[2], message[3])
         rednet.send(PHONE_NUM, "arrived")
-        rednet.send(HERA, "arrived")
     elseif message == "forward" then
         refuel()
         turtle.forward()
@@ -85,10 +83,8 @@ while true do
         if (fs.exists(message) == true or fs.exists(message..'.lua') == true) then 
             shell.run(message)
             rednet.send(PHONE_NUM, 'IDE')
-            rednet.send(HERA, 'IDE')
         elseif (fs.exists(message) ~= true or fs.exists(message..'.lua') ~= true) then
             rednet.send(PHONE_NUM, 'DNE')
-            rednet.send(HERA, 'DNE')
         end 
     elseif message == "invLeft" then 
         if invPos ~= 1 then
@@ -128,19 +124,16 @@ while true do
         info[5] = turtle.getSelectedSlot()
         info[6] = turtle.getFuelLevel()
         rednet.send(PHONE_NUM, info, "info")
-        rednet.send(HERA, info, "info")
     elseif protocol == "dock" then
         refuel()
         print("Docking")
         shell.run("Summon", message[1], message[2], message[3])
         shell.run("Dock")
         rednet.send(PHONE_NUM, "docked")
-        rednet.send(HERA, "docked")
     elseif protocol == "undock" then
         refuel()
         print("Undocking")
         shell.run("Undock")
         rednet.send(PHONE_NUM, "undocked")
-        rednet.send(HERA, "undocked")
     end
 end

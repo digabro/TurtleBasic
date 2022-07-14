@@ -4,7 +4,6 @@ local COMPS = {19, 10, 7, 9}
 local COMP_POS = 1
 local COMP_NUM = COMPS[COMP_POS]
 local COMP_LEN = table.getn(COMPS)
-local HERA = 11
 
 local COMMAND = nil
 local ran = false
@@ -206,29 +205,6 @@ while true do
         invStatus = 'com1'
     elseif key == keys.p then 
         invStatus = 'com2'
-    elseif key == keys.slash then
-        rednet.send(HERA, "open")  
-    elseif key == keys.apostrophe then
-        rednet.send(HERA, COMP_NUM, "dock")
-        isDocked = false
-
-        while isDocked == false do
-            sleep(1)
-            local sender, message, protocol = rednet.receive()
-            if message == "docked" or message == "undocked" then
-                isDocked = true
-            end
-        end
-    end
-
-    if key == keys.backslash then
-        if (COMP_POS == COMP_LEN) then
-            COMP_POS = 1
-        elseif (COMP_POS ~= COMP_LEN) then
-            COMP_POS = COMP_POS + 1
-        end  
-        COMP_NUM = COMPS[COMP_POS]
-    end
     sleep(0.4)
     if (invStatus == 'inv') then 
         infoGetInv()
