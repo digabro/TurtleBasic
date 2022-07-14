@@ -1,6 +1,6 @@
 rednet.open("back")
 
-local COMPS = {19, 10, 7, 9}
+local COMPS = {1}
 local COMP_POS = 1
 local COMP_NUM = COMPS[COMP_POS]
 local COMP_LEN = table.getn(COMPS)

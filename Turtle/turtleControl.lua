@@ -1,7 +1,7 @@
 rednet.open("left")
 
 local SLOT_COUNT = 16
-local PHONE_NUM = 2
+local PHONE_NUM = 0
 local info = {}
 
 
