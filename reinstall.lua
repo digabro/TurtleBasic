@@ -8,7 +8,7 @@ function download(url, file)
     f = fs.open(file, "w")
     f.write(content)
     f.close()
-  end
+end
 
 if (prog == 'turtle' or prog == 'Turtle') then
     fs.delete('turtleControl.lua')
@@ -18,3 +18,4 @@ else if (prog == 'phone' or prog == 'Phone') then
     fs.delete('phoneControl.lua')
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/Pocket/phoneControl.lua?token=GHSAT0AAAAAABWTABYYFSOLKJH2O75X2VWKYWQS2HQ','phoneControl')
     print('phoneControl.lua reinstalled')
+end
