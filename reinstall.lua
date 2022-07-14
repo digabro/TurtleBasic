@@ -1,12 +1,12 @@
 local prog = arg[1]
 
 function download(url, file)
-    local content = http.get(url).readAll()
+    local content = http.get(url)
     if not content then
       error("Could not connect to website")
     end
     f = fs.open(file, "w")
-    f.write(content)
+    f.write(content.readAll())
     f.close()
 end
 
