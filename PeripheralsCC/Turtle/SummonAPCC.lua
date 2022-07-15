@@ -6,6 +6,34 @@ if (#arg == 3) then
     location[3] = arg[3]
 end
 
+function findChunkLoader()
+    local invNum = 1
+    local foundStatus = false
+    local fail = false
+    while (foundStatus == false and fail == false) do 
+        if (invNum == 17) then 
+            invNum = 1
+            fail = true 
+        end
+        if (turtle.getItemDetail(invNum).name == 'advancedperipherals:chunk_controller') then 
+            foundStatus = true 
+            return(invNum)
+        elseif (turtle.getItemDetail(invNum).name ~= 'advancedperipherals:chunk_controller') then 
+            invNum = invNum + 1
+        end 
+    end 
+end
+function equiptChunkLoader()
+    local chunkStatus = findChunkLoader()
+    turtle.select(chunkStatus)
+    if (peripheral.getType('right') == nil or peripheral.getType('right') ~= 'modem') then 
+        turtle.equipRight()
+    elseif (peripheral.getType('left') == nil or peripheral.getType('left') ~= 'modem') then
+        turtle.equipRight()
+    end
+end
+
+
 function getOrientation()
     loc1 = vector.new(gps.locate(2, false))
     if not turtle.forward() then
@@ -48,7 +76,7 @@ function toPointPrecise(x, y, z)
     errX = posX - x
     errY = posY - y
     errZ = posZ - z
-
+    equiptChunkLoader()
     turnSouth()
 
     if errX == 0 then
