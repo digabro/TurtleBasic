@@ -132,6 +132,7 @@ function toPointPrecise(x, y, z)
     if resetFlag then
         turtle.turnLeft()
     end
+    unequiptChunkLoader()
 end
 
 toPointPrecise(location[1], location[2], location[3])
