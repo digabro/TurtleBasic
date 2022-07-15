@@ -2,6 +2,7 @@ local prog = arg[1]
 
 function download(url, file)
     local content = http.get(url)
+    print(content)
     if not content then
       error("Could not connect to website")
     end
