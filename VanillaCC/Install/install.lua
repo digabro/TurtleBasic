@@ -21,7 +21,7 @@ if (prog == 'phone' or prog == 'Phone') then
     print('reinstall.lua installed')
     sleep(5)
     os.reboot
-elseif (prog == 'turtle' or prog == 'Turtle') then
+elseif(prog == 'turtle' or prog == 'Turtle') then
     f = fs.open("startup", "w")
     f.write('shell.run("turtleControl")')
     f.close()
