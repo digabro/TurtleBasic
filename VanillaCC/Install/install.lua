@@ -11,11 +11,17 @@ function download(url, file)
 end
 
 if (prog == 'phone' or prog == 'Phone') then
+    f = fs.open("startup", "w")
+    f.write('shell.run("phoneControl")')
+    f.close()
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/VanillaCC/Phone/phoneControl.lua','phoneControl')
     print('phoneControl.lua installed')
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/VanillaCC/Install/reinstall.lua','reinstall')
     print('reinstall.lua installed')
 elseif (prog == 'turtle' or prog == 'Turtle') then
+    f = fs.open("startup", "w")
+    f.write('shell.run("phoneControl")')
+    f.close()
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/VanillaCC/Turtle/turtleControl.lua', 'turtleControl')
     print('turtleControl.lua installed')
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/VanillaCC/Install/reinstall.lua','reinstall')
