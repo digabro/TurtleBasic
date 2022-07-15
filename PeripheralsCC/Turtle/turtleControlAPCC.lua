@@ -33,7 +33,7 @@ while true do
 
     if protocol == "come" then
         refuel()
-        shell.run("Summon", message[1], message[2], message[3])
+        shell.run("SummonAPCC", message[1], message[2], message[3])
         rednet.send(PHONE_NUM, "arrived")
     elseif message == "forward" then
         refuel()
@@ -124,16 +124,5 @@ while true do
         info[5] = turtle.getSelectedSlot()
         info[6] = turtle.getFuelLevel()
         rednet.send(PHONE_NUM, info, "info")
-    elseif protocol == "dock" then
-        refuel()
-        print("Docking")
-        shell.run("Summon", message[1], message[2], message[3])
-        shell.run("Dock")
-        rednet.send(PHONE_NUM, "docked")
-    elseif protocol == "undock" then
-        refuel()
-        print("Undocking")
-        shell.run("Undock")
-        rednet.send(PHONE_NUM, "undocked")
     end
 end
