@@ -15,12 +15,16 @@ function findChunkLoader()
             invNum = 1
             fail = true 
         end
-        if (turtle.getItemDetail(invNum).name == 'advancedperipherals:chunk_controller') then 
-            foundStatus = true 
-            return(invNum)
-        elseif (turtle.getItemDetail(invNum).name ~= 'advancedperipherals:chunk_controller') then 
+        if (turtle.getItemCount(invNum) == 1) then 
+            if (turtle.getItemDetail(invNum).name == 'advancedperipherals:chunk_controller') then 
+                foundStatus = true 
+                return(invNum)
+            elseif (turtle.getItemDetail(invNum).name ~= 'advancedperipherals:chunk_controller') then 
+                invNum = invNum + 1
+            end 
+        elseif (turtle.getItemCount(invNum) ~= 1) then 
             invNum = invNum + 1
-        end 
+        end
     end 
 end
 function equiptChunkLoader()
