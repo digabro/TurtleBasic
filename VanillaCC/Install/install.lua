@@ -20,7 +20,7 @@ if (prog == 'phone' or prog == 'Phone') then
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/VanillaCC/Install/reinstall.lua','reinstall')
     print('reinstall.lua installed')
     sleep(5)
-    os.reboot
+    os.reboot()
 elseif(prog == 'turtle' or prog == 'Turtle') then
     f = fs.open("startup", "w")
     f.write('shell.run("turtleControl")')
@@ -35,5 +35,5 @@ elseif(prog == 'turtle' or prog == 'Turtle') then
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/VanillaCC/Turtle/Summon.lua', 'summon')
     print('summon.lua installed')
     sleep(5)
-    os.reboot
+    os.reboot()
 end
