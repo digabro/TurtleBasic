@@ -12,11 +12,11 @@ end
 
 if (prog == 'turtle' or prog == 'Turtle') then
     fs.delete('turtleControl.lua')
-    download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/Turtle/turtleControl.lua?token=GHSAT0AAAAAABWTABYYO3RKGBXSABWO5IP2YWQZDRQ','turtleControl')
+    download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/Turtle/turtleControl.lua','turtleControl')
     print('turtleControl.lua reinstalled')
 elseif (prog == 'phone' or prog == 'Phone') then
     fs.delete('phoneControl.lua')
-    download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/Pocket/phoneControl.lua?token=GHSAT0AAAAAABWTABYZSCLCJ3XB44QWMJOCYWQZD3Q','phoneControl')
+    download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/Pocket/phoneControl.lua','phoneControl')
     print('phoneControl.lua reinstalled')
 end
 
