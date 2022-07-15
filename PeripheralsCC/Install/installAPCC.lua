@@ -20,7 +20,7 @@ if (prog == 'phone' or prog == 'Phone') then
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/PeripheralsCC/Install/reinstallAPCC.lua','reinstallAPCC')
     print('reinstallAPCC.lua installed')
     sleep(5)
-    fs.delete('install.lua')
+    fs.delete('installAPCC.lua')
     os.reboot()
 elseif(prog == 'turtle' or prog == 'Turtle') then
     f = fs.open("startup", "w")
