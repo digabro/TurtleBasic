@@ -20,7 +20,7 @@ if (prog == 'phone' or prog == 'Phone') then
     print('reinstall.lua installed')
 elseif (prog == 'turtle' or prog == 'Turtle') then
     f = fs.open("startup", "w")
-    f.write('shell.run("phoneControl")')
+    f.write('shell.run("turtleControl")')
     f.close()
     download('https://raw.githubusercontent.com/digabro/TurtleBasic/main/VanillaCC/Turtle/turtleControl.lua', 'turtleControl')
     print('turtleControl.lua installed')
