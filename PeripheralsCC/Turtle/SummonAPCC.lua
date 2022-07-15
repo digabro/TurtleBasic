@@ -27,16 +27,24 @@ function findChunkLoader()
         end
     end 
 end
+
 function equiptChunkLoader()
     local chunkStatus = findChunkLoader()
     turtle.select(chunkStatus)
     if (peripheral.getType('right') == nil or peripheral.getType('right') ~= 'modem') then 
         turtle.equipRight()
     elseif (peripheral.getType('left') == nil or peripheral.getType('left') ~= 'modem') then
-        turtle.equipRight()
+        turtle.equipLeft()
     end
 end
 
+function unequiptChunkLoader()
+    if (peripheral.getType('right') == 'chunky') then 
+        turtle.equipRight()
+    elseif (peripheral.getType('left') == 'chunky') then
+        turtle.equipLeft()
+    end
+end
 
 function getOrientation()
     loc1 = vector.new(gps.locate(2, false))
