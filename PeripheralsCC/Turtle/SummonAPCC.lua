@@ -28,7 +28,7 @@ function findChunkLoader()
     end 
 end
 
-function equiptChunkLoader()
+function equipChunkLoader()
     local chunkStatus = findChunkLoader()
     turtle.select(chunkStatus)
     if (peripheral.getType('right') == nil or peripheral.getType('right') ~= 'modem') then 
@@ -38,7 +38,7 @@ function equiptChunkLoader()
     end
 end
 
-function unequiptChunkLoader()
+function unequipChunkLoader()
     if (peripheral.getType('right') == 'chunky') then 
         turtle.equipRight()
     elseif (peripheral.getType('left') == 'chunky') then
@@ -132,7 +132,7 @@ function toPointPrecise(x, y, z)
     if resetFlag then
         turtle.turnLeft()
     end
-    unequiptChunkLoader()
+    unequipChunkLoader() 
 end
 
 toPointPrecise(location[1], location[2], location[3])
