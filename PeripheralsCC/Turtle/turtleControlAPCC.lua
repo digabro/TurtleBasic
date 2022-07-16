@@ -91,6 +91,7 @@ while true do
             shell.run(message)
         elseif (fs.exists(message) ~= true or fs.exists(message..'.lua') ~= true) then
             local simpleMessage = commandSimplify(message)
+            print (simpleMessage)
             if (fs.exists(simpleMessage) == true or fs.exists(simpleMessage..'.lua') == true) then
                 rednet.send(PHONE_NUM, 'IDE')
                 shell.run(message)
