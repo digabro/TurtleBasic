@@ -81,8 +81,8 @@ while true do
         local senderId, message, protocol = rednet.receive()
         local progStatus = false
         if (fs.exists(message) == true or fs.exists(message..'.lua') == true) then 
-            shell.run(message)
             rednet.send(PHONE_NUM, 'IDE')
+            shell.run(message)
         elseif (fs.exists(message) ~= true or fs.exists(message..'.lua') ~= true) then
             rednet.send(PHONE_NUM, 'DNE')
         end 
