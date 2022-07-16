@@ -24,7 +24,7 @@ end
 function commandSimplify(complex)
     for word in string.gmatch(complex,'%S+') do 
         return(word)
-        if (word~=nil) then 
+        if 1==1 then     
             break
         end
     end
