@@ -23,11 +23,10 @@ end
 
 function commandSimplify(complex)
     local spacePos = strfind(complex, ' ')
-    local simple = complex
     if(spacePos == nil) then
-        return(simple)
+        return(complex)
     elseif(spacePos ~= nil) then 
-        simple = string.sub(simple, 1, spacePos)
+        local simple = string.sub(simple, 1, spacePos)
         return(simple)
     end
     print(complex..' '..simple)
