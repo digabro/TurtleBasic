@@ -30,6 +30,7 @@ function commandSimplify(complex)
         simple = string.sub(simple, 1, spacePos)
         return(simple)
     end
+    print(complex..' '..simple)
 end
 
 local invPos = turtle.getSelectedSlot()
