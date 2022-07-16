@@ -22,7 +22,10 @@ function refuel()
 end
 
 function commandSimplify(complex)
-    print(string.gmatch(complex,'%S+'))
+    for word in string.gmatch(complex,'%S+') do 
+        print(word)
+        break
+    end
 end
 
 local invPos = turtle.getSelectedSlot()
