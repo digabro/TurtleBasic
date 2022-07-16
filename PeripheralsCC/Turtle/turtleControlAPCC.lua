@@ -22,7 +22,7 @@ function refuel()
 end
 
 function commandSimplify(complex)
-    local spacePos = string.find(complex,'.-')
+    local spacePos = string.gmatch(complex,'%s')
     if(spacePos == nil) then
         return(complex)
     elseif(spacePos ~= nil) then 
