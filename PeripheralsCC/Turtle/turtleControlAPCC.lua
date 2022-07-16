@@ -23,7 +23,7 @@ end
 
 function commandSimplify(complex)
     for word in string.gmatch(complex,'%s') do 
-        print(simple)
+        print(word)
     end
 end
 
