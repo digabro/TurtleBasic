@@ -21,6 +21,17 @@ function refuel()
     end
 end
 
+function commandSimplify(complex)
+    local spacePos = strfind(complex, ' ')
+    local simple = complex
+    if(spacePos == nil) then
+        return(simple)
+    elseif(spacePos ~= nil) then 
+        simple = string.sub(simple, 1, spacePos)
+        return(simple)
+    end
+end
+
 local invPos = turtle.getSelectedSlot()
 term.clear()
 
@@ -84,7 +95,12 @@ while true do
             rednet.send(PHONE_NUM, 'IDE')
             shell.run(message)
         elseif (fs.exists(message) ~= true or fs.exists(message..'.lua') ~= true) then
-            rednet.send(PHONE_NUM, 'DNE')
+            if (fs.exists(commandSimplify(message)) == true or fs.exists(commandSimplify(message)..'.lua') == true) then
+                rednet.send(PHONE_NUM, 'IDE')
+                shell.run(message)
+            elseif (fs.exists(commandSimplify(message)) ~= true or fs.exists(commandSimplify(message)..'.lua') ~= true) then
+                rednet.send(PHONE_NUM, 'DNE')
+            end
         end 
     elseif message == "invLeft" then 
         if invPos ~= 1 then
