@@ -22,11 +22,11 @@ function refuel()
 end
 
 function commandSimplify(complex)
-    local spacePos = strfind(complex, ' ')
+    local spacePos = string.find(complex,'.-')
     if(spacePos == nil) then
         return(complex)
     elseif(spacePos ~= nil) then 
-        local simple = string.sub(simple, 1, spacePos)
+        local simple = string.sub(complex, 1, spacePos)
         return(simple)
     end
     print(complex..' '..simple)
