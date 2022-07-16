@@ -22,14 +22,8 @@ function refuel()
 end
 
 function commandSimplify(complex)
-    local spacePos = string.gmatch(complex,'%s')
-    if(spacePos == nil) then
-        return(complex)
-    elseif(spacePos ~= nil) then 
-        local simple = string.sub(complex, 1, spacePos)
-        return(simple)
-    end
-    print(complex..' '..simple)
+    local simple = string.gmatch(complex,'%s')
+    print(simple)
 end
 
 local invPos = turtle.getSelectedSlot()
