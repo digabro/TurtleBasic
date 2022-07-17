@@ -88,7 +88,7 @@ function toPointPrecise(x, y, z)
     errX = posX - x
     errY = posY - y
     errZ = posZ - z
-    equiptChunkLoader()
+    equipChunkLoader()
     turnSouth()
 
     if errX == 0 then
